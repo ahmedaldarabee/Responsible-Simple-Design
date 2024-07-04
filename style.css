@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #eee;
+
+    width: 100%;
+    margin: 150px auto;
+    padding: 10px;
+
+    text-align: center;
+}        
+
+.product-list div {
+    background-color: #ccc;
+    padding: 10px;
+}
+
+@media(min-width:400px) and (max-width:650px) {
+    .product-list div{
+        width: 100%;
+        margin:10px;
+    }
+    .product-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        flex-flow: row wrap;
+    }
+
+    p {                
+        color: black;
+    }
+}
+
+@media(min-width:651px) and (max-width:890px) {
+    .product-list div{
+        margin:10px;
+    }
+
+    /* Every time you needed to have parent be flexible then do changes in each block */
+    .product-list {
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+
+    p:first-child {
+        color: red;
+    }
+
+    div.product-one{
+        width: 100%;
+    }
+
+    div.product-two ,
+    div.product-three ,
+    div.product-four {
+        /* important way to reduce percent to have spacing between element in correct way */
+        width: calc(90% / 3);
+    }
+}
+
+@media (min-width:891px) {
+    .product-list div {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .product-one ,
+    .product-four {
+        width: 100%;
+    }
+    
+    .product-two ,
+    .product-three{
+        width: calc(95% / 2);
+    }
+
+    p:first-child {
+    color: lightseagreen;
+    }
+
+    .product-list {
+        /* Important Part to hold respirable design */
+        flex-flow: row wrap;
+    }
+}
